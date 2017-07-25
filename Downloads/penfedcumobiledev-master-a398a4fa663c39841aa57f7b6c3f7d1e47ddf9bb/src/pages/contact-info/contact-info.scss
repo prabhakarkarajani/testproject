@@ -1,0 +1,105 @@
+page-contact-info {
+  .content {
+    background-color: $pf-mobile-light-grey;
+  }
+
+  .contact-info-header {
+    font-family: 'monserrat600',sans-serif !important;
+    background-color: $header-color;
+    height: 4.6rem;
+  }
+
+  .backButton {
+    background-color: $header-color;
+    margin: 1.1rem;
+  }
+
+  .toolbar-title {
+    text-align: left;
+    margin-left: 1.2rem;
+    font-size: 1.6rem;
+    letter-spacing: 1px;
+    font-weight: 600;
+    line-height: 4.6rem;
+    color: white;
+  }
+
+ .icon.ion-ios-arrow-back{
+   font-size: 2rem;
+   font-weight: 500;
+   color: #FFFFFF;
+
+ }
+
+  .userName {
+    height: 19px;
+    width: 100%;
+    margin-bottom: 5px;
+    color: #0D2B53;
+    padding-left: 15px;
+    font-family: 'monserrat600',sans-serif !important;
+    font-size: 1em;
+    letter-spacing: 1px;
+    line-height: 19px;
+  }
+
+  button {
+    & > .item-inner {
+      background-image: none!important;
+      padding: 0 !important;
+      height: auto;
+    }
+  }
+
+  .list-item.item.item-block {
+    padding-left: 0;
+  }
+
+
+  .item-inner-contant,
+  .item-inner-contant-last {
+
+    display: inline-block;
+
+    p {
+      //font-size: 16px;
+      font-family: 'monserratRegular',sans-serif !important;
+      margin-bottom: 5px;
+
+      & > .sub-title {
+        font-weight: bold;
+      }
+    }
+  }
+
+  .item-group {
+    // padding: 0px 16px !important;
+    margin-top: 0;
+
+    & > .item-inner-icon-last {
+      display: inline-block;
+      float: right;
+      margin-right: 16px;
+
+      .icon.item-icon {
+        color: $pf-mobile-light-blue-alt;
+      }
+    }
+
+    & > .item-inner-icon {
+      float: right;
+      height: 50%;
+      margin-bottom: -120px;
+      display: inline-block;
+      margin-top: 10px;
+    }
+  }
+
+  .list-item-last {
+    & > .item-inner {
+      background-image: none!important;
+      padding: 0 !important;
+      //height: 40px;
+    }
+  }
+}

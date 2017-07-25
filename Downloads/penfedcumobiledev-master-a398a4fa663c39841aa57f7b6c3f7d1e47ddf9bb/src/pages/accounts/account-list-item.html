@@ -1,0 +1,28 @@
+<ion-list *ngIf="accountType.length">
+  <ion-item-divider class="dividerHeading"> 
+    <div class="headingTitle">{{accountTypeLabel}}</div>
+    <div class="asOfDate" float-right><span>As of</span> {{accountAsOfDate || "...Loading"}}</div>
+  </ion-item-divider>
+  <ion-item *ngFor="let account of accountType">
+    <button ion-item class="account" (click)="loadAccount(account)">
+      <ion-row>
+        <!--{{(typeof account.nickname)}}-->
+        <ion-col class="accountName" text-left col-12>
+          <span *ngIf="!account.nickname">{{account.fullName}}</span>
+          <span *ngIf="account.nickname">{{account.nickname}}</span>
+          <span>({{account.numLast4}})</span></ion-col>
+        <ion-col class="accountBal" text-left col-12>
+          <h3 *ngIf="account.parentAcctType === 'CHECKING_SAVING'; else CC_LoanBalTemplate" class="balance">{{account.availableBal | formatPrice}}</h3>
+          <ng-template #CC_LoanBalTemplate>
+            <h3 class="balance">{{account.currentBal | formatPrice}}</h3>
+          </ng-template>
+          <ion-icon text-right ios="ios-arrow-forward" md="ios-arrow-forward"></ion-icon>
+          <p *ngIf="account.parentAcctType === 'CHECKING_SAVING'; else CC_LoanBalLabelTemplate">Available Balance</p>
+          <ng-template #CC_LoanBalLabelTemplate>
+              <p>Current Balance</p>
+          </ng-template>
+        </ion-col>
+      </ion-row>
+    </button>
+  </ion-item>
+</ion-list>

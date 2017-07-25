@@ -1,0 +1,139 @@
+<!--
+  Generated template for the UpdateMailingAddressPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar>
+        <ion-title text-uppercase>update Mailing Address</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+
+    <form (ngSubmit)="submitUpdateMailingAddress(mailingForm.value)" *ngIf="mailingAddress" [formGroup]="mailingForm">
+
+        <ion-row>
+            <ion-col>
+                <ion-label>Address Line 1</ion-label>
+                <ion-item class="mailingFormitem">
+                    <ion-input type="text" name="mailingAddress1" maxlength="26" [(ngModel)]="mailingAddress.mailingAddress1" formControlName="mailingAddress1"></ion-input>
+                </ion-item>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>
+                <ion-label>Address Line 2</ion-label>
+                <ion-item class="mailingFormitem">
+
+                    <ion-input type="text" name="mailingAddress2" maxlength="26" [(ngModel)]="mailingAddress.mailingAddress2" formControlName="mailingAddress2"></ion-input>
+                </ion-item>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>
+                <ion-label>City</ion-label>
+                <ion-item class="mailingFormitem">
+                    <ion-input type="text" name="mailingCity" [(ngModel)]="mailingAddress.mailingCity" formControlName="mailingCity"></ion-input>
+                </ion-item>
+            </ion-col>
+
+        </ion-row>
+        <ion-row>
+            <ion-col col-8>
+                <ion-label>state/territory</ion-label>
+
+                <ion-select disabled={{stateDisabled}} name="mailingState" [(ngModel)]="mailingAddress.mailingState" formControlName="mailingState" class="mailingFormitem">
+                    <ion-option *ngFor="let state of states" [value]="state.name">{{state.name}}</ion-option>
+                </ion-select>
+            </ion-col>
+            <ion-col col-4>
+                <ion-label>zip code</ion-label>
+                <ion-item class="mailingFormitem">
+                    <ion-input disabled={{stateDisabled}} type="text" name="mailingZip" [(ngModel)]="mailingAddress.mailingZip" formControlName="mailingZip"></ion-input>
+                </ion-item>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>
+                <ion-label>country</ion-label>
+                <ion-select name="mailingCountry" [(ngModel)]="mailingAddress.mailingCountry" class="mailingFormitem" formControlName="mailingCountry" (ionChange)="getCountry(mailingAddress.mailingCountry,'mailingCountry')">
+                    <ion-option *ngFor="let country of countries" [value]="country.name" [title]="country.code">{{country.name}}</ion-option>
+                </ion-select>
+            </ion-col>
+        </ion-row>
+        <ion-row padding-vertical>
+            <ion-col col-9>
+                <span class="POBox">Did you enter a P.O. Box as a mailing address?</span>
+            </ion-col>
+            <ion-col col-3>
+                <ion-toggle name="POBox" (ionChange)="notify($event)" class="button-inner" [checked]="isToggled" float-end></ion-toggle>
+
+            </ion-col>
+        </ion-row>
+
+
+        <!-- POBOX form -->
+        <div *ngIf="isToggled">
+            <h6 class="_title">physical address</h6>
+            <ion-row>
+                <ion-col>
+                    <ion-label>Address Line 1</ion-label>
+                    <ion-item class="mailingFormitem">
+                        <ion-input type="text" name="physicalAddress1" maxlength="26" [(ngModel)]="mailingAddress.physicalAddress1" formControlName="physicalAddress1"></ion-input>
+                    </ion-item>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col>
+                    <ion-label>Address Line 2</ion-label>
+                    <ion-item class="mailingFormitem">
+
+                        <ion-input type="text" name="physicalAddress2" maxlength="26" [(ngModel)]="mailingAddress.physicalAddress2" formControlName="physicalAddress2"></ion-input>
+                    </ion-item>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col>
+                    <ion-label>City</ion-label>
+                    <ion-item class="mailingFormitem">
+                        <ion-input type="text" name="physicalCity" [(ngModel)]="mailingAddress.physicalCity" formControlName="physicalCity"></ion-input>
+                    </ion-item>
+                </ion-col>
+
+            </ion-row>
+            <ion-row>
+                <ion-col col-8>
+                    <ion-label>state/territory</ion-label>
+
+                    <ion-select disabled={{physicalStateDisabled}} name="physicalState" [(ngModel)]="mailingAddress.physicalState" class="mailingFormitem" formControlName="physicalState">
+                        <ion-option *ngFor="let state of states" [value]="state.name">{{state.name}}</ion-option>
+                    </ion-select>
+                </ion-col>
+                <ion-col col-4>
+                    <ion-label>zip code</ion-label>
+                    <ion-item class="mailingFormitem">
+                        <ion-input disabled={{physicalStateDisabled}} type="text" name="physicalZip" [(ngModel)]="mailingAddress.physicalZip" formControlName="physicalZip"></ion-input>
+                    </ion-item>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col>
+                    <ion-label>country</ion-label>
+                    <ion-select name="physicalCountry" [(ngModel)]="mailingAddress.physicalCountry" class="mailingFormitem" formControlName="physicalCountry" (ionChange)="getCountry(mailingAddress.mailingCountry,'physicalCountry')">
+                        <ion-option *ngFor="let country of countries" [value]="country.name">{{country.name}}</ion-option>
+                    </ion-select>
+                </ion-col>
+            </ion-row>
+        </div>
+        <div class="submitBtn">
+            <button ion-button type="submit">update Address</button>
+        </div>
+
+    </form>
+</ion-content>

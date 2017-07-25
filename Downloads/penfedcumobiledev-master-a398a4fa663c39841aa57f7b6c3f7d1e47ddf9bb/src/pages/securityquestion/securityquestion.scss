@@ -1,0 +1,153 @@
+page-securityquestion {
+  .toolbar-title.toolbar-title-ios {
+    color: white;
+  }
+
+  .list-header.item.item-ios.list-header-ios {
+    .label.label-ios {
+      margin-bottom: 1px;
+      padding-top: 10px;
+      font-weight: bold;
+    }
+  }
+
+  .title {
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    line-height: 31px;
+    font-size: 16px;
+    white-space: nowrap;
+  }
+
+  .textHighlight {
+    font-weight: bold;
+    text-color: #000;
+  }
+
+  p.securityDesc {
+    white-space: initial;
+    font-weight: normal;
+  }
+
+  .securityDesc {
+    padding: $content-padding;
+    margin-bottom: 0;
+  }
+
+  .login-as-different-u {
+    color: #488aff;
+    font-size: 12px;
+    line-height: 17px;
+    padding-left: 16px;
+  }
+
+  .need-help-logging-in {
+    color: #488aff;
+    font-size: 12px;
+    line-height: 17px;
+    padding-left: 16px;
+  }
+
+  .gap-top {
+    margin-top: 16px;
+  }
+
+  .securityQuesSub {
+    height: 19px;
+    width: 100%;
+    margin-bottom: 5px;
+    padding-left: 20px;
+    padding-top: 10px;
+    font-family: 'monserrat600',sans-serif !important;
+    letter-spacing: 1px;
+    line-height: 19px;
+  }
+
+  .securityQues {
+    height: 19px;
+    width: 100%;
+    margin-bottom: 5px;
+    color: #0D2B53;
+    padding-left: 20px;
+    font-family: 'monserrat600',sans-serif !important;
+    letter-spacing: 1px;
+    line-height: 19px;
+  }
+  .answerPlace{
+    height: 19px;
+    width: 100%;
+    color:#0D2B53;
+    font-weight:normal;
+    font-family: 'monserrat600',sans-serif !important;
+    letter-spacing: 1px;
+    line-height: 19px;
+
+  }
+
+
+  ion-icon {
+    color: #FFFFFF;
+    font-size: 26px;
+    font-weight: 600;
+    line-height: 23px;
+    text-align: center;
+  }
+
+  .content {
+    background-color: $pf-mobile-light-grey;
+  }
+
+  .phone-header {
+    font-family: 'monserrat600',sans-serif !important;
+    background-color: $header-color;
+    margin-bottom: 12px;
+  }
+
+  .backButton {
+    background-color: $header-color;
+    margin: 19px;
+  }
+
+  .toolbar-title {
+    text-align: left;
+    margin-left: 20px;
+    font-size: 16px;
+    letter-spacing: 1px;
+    font-weight: 600;
+    line-height: 66px;
+    color: white;
+  }
+
+
+  .item.item-input {
+	  border: none;
+	  position: relative;
+    background-color: transparent;
+    width:100%;
+    margin-right:20px;
+}
+
+.answerLabel{
+  color:orange;
+}
+.rememberDevice {
+  color: #0D2B53;
+  font-size: 12px;
+  line-height: 42px;
+  padding:20px 0px 0px 20px;
+}
+
+  .update-button {
+    height: 50px;
+    background-color: #0095D2;
+    margin-top:20px;
+    & > .button-inner {
+      color: #FFFFFF;
+      font-family: 'monserrat500',sans-serif !important;
+      letter-spacing: 1px;
+      background-color: #0095D2;
+      text-align: center;
+    }
+  }
+}

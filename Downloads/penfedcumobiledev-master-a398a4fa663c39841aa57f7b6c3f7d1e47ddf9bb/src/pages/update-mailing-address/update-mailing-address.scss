@@ -1,0 +1,125 @@
+page-update-mailing-address {
+    font-family: Montserrat;
+    .scroll-content {
+        background: #f4f4f4 !important;
+        padding: 5px 10px 16px !important;
+    }
+    ion-header {
+        .toolbar-background-md {
+            background-color: $header-color;
+            letter-spacing: 0.2rem;
+        }
+        ion-navbar {
+            button.back-button-md {
+                margin-left: 0px;
+                padding-left: 0px;
+                .ion-md-arrow-back:before {
+                    content: "\f2c0";
+                    font-family: Ionicons;
+                    font-size: 20px;
+                    color: #FFFFFF;
+                    letter-spacing: 0;
+                    font-weight: 600;
+                }
+            }
+            ion-title {
+                .toolbar-title-md {
+                    color: #FFFFFF;
+                    font-weight: 600;
+                    font-size: 16px;
+                    letter-spacing: 2px;
+                    padding-left: 0!important;
+                }
+            }
+        }
+    }
+    .content-md {
+        color: rgba(51, 51, 51, 0.72);
+    }
+    ion-col {
+        padding-bottom: 0px!important;
+        .mailingFormitem {
+            border: 0;
+            border-bottom: 2px solid #d0d0d0;
+            max-width: 100%;
+            padding-left: 0px !important;
+            color: #282828;
+            .item-inner {
+                border-bottom: 0px!important;
+                box-shadow: none!important;
+                background: #FFFFFF;
+            }
+            ion-input {
+                font-size: 18px;
+                color: #282828;
+                letter-spacing: 0.5px;
+            }
+        }
+        ion-select {
+            .select-text {
+                padding-left: 10px !important;
+                text-transform: uppercase;
+                background: #FFFFFF;
+                font-size: 18px;
+                color: #282828;
+                letter-spacing: 0.5px;
+            }
+            [ion-button] {
+                pointer-events: none!important;
+            }
+        }
+    }
+    ion-label {
+        text-transform: uppercase;
+        margin-top: 10px!important;
+        margin-bottom: 2px !important;
+        font-size: 12px;
+        color: #0F2D52;
+        letter-spacing: 0;
+        line-height: 24px;
+    }
+    .POBox {
+        font-size: 14px;
+        color: #0D2B53;
+    }
+    ._title {
+        font-weight: 700;
+        text-transform: uppercase;
+        font-size: 16px;
+        color: #0D2B53;
+        letter-spacing: 1px;
+        padding-left: 5px;
+        padding-top: 0px;
+        margin-top: 14px;
+        margin-bottom: 5px;
+    }
+    .toggle-md {
+        padding-right: 0;
+        &.toggle-checked {
+            .toggle-icon {
+                background-color: #3ea9e2;
+            }
+            .toggle-inner {
+                background-color: #FFFFFF!important;
+                border: 1px solid #3ea9e2;
+            }
+        }
+    }
+    .submitBtn {
+        text-align: center;
+        margin-top: 16px;
+        button {
+            padding: 25px 35px;
+            font-weight: 500;
+            background: #002856;
+            border-radius: 4px;
+            font-size: 16px;
+            color: #FFFFFF;
+            letter-spacing: 1px;
+            line-height: 35px;
+        }
+    }
+    .select-md {
+        background: #FFFFFF;
+    }
+}

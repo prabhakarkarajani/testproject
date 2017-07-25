@@ -1,0 +1,190 @@
+page-login {
+  .flex-container {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+  }
+  font-family: 'Montserrat', sans-serif !important;
+
+  .login-header {
+    .login-toolbar {
+      .toolbar-title {
+        margin-top: 7px;
+      }
+    }
+  }
+
+  .title {
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    font-size: 16px;
+  }
+
+  .logo-main {
+    height: 100%;
+    width: 100%;
+  }
+
+  .login-bg {
+    linear-gradient: (180deg, rgba(13, 43, 83, 0.6) 0%, rgba(13, 43, 83, 0.94) 87.53%, #0D2B53 100%);
+    background: url("../assets/img/HeroImage.png") no-repeat center center fixed;
+    background-size: cover;
+  }
+
+  .login-content {
+    font-family: 'Montserrat', sans-serif !important;
+  }
+
+  .greetString {
+    font-size: 28px;
+    font-weight: 500;
+    white-space: nowrap;
+    color: #FFFFFF;
+  }
+
+  .welcome-to-pen-fed {
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    line-height: 19px;
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  .login-as-different-u {
+    color: #FFFFFF;
+    font-size: 12px;
+    line-height: 17px;
+    padding-left: 16px;
+  }
+
+  .need-help-logging-in {
+    color: #FFFFFF;
+    font-size: 12px;
+    line-height: 17px;
+    // margin-bottom: $content-margin;
+    padding-left: 16px;
+  }
+
+  .enable-touch-id,
+  .save-username {
+    color: #F4F4F4;
+    font-size: 1.2rem;
+    line-height: 4.2rem;
+    padding-left: 0.5rem;
+  }
+
+  .toggle-text {
+    margin: 13px 13px 13px 6px;
+    font-size: 12px;
+    color: white;
+  }
+
+  .toggle-button {
+    padding: 13px 0 0;
+    contain: size;
+  }
+
+  .toggle-ios .toggle-inner {
+    left: 0;
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .toggle-ios.button-inner {
+    margin-top: 1rem;
+    margin-left: 0.5rem;
+  }
+
+  .toggle.button-inner {
+    height: 2rem;
+    width: 3.5rem;
+
+    .toggle-icon {
+      .toggle-inner {
+        top: 0;
+      }
+    }
+  }
+
+  .toggle.toggle-inner {
+    top: 0;
+    height: 1rem;
+    width: 1.5rem;
+    background-color: #D0D0D0;
+  }
+
+  .login-footer {
+    .login-footer-link {
+      height: 18px;
+      width: 92px;
+      color: #FFFFFF;
+      font-size: 1.4rem;
+      font-weight: 600;
+      line-height: 1.7rem;
+      text-align: center;
+      margin-top: 60px;
+    }
+  }
+
+  .submit-btn {
+    background-color: #0095D2;
+  }
+
+  .memberid-item {
+    opacity: 0.9;
+    background-color: #FFFFFF;
+  }
+
+  .pwd-item {
+    opacity: 0.9;
+    background-color: #FFFFFF;
+  }
+
+  .terms-conditions-a {
+    height: 15px;
+    width: 330px;
+    color: #FFFFFF;
+    font-size: 12px;
+    line-height: 15px;
+    text-decoration: underline;
+    padding: $content-padding;
+  }
+
+  .footer-top {
+    margin-bottom: 16px;
+  }
+
+  .gap-top {
+    margin-top: 16px;
+  }
+
+  .rectangleUnderLink {
+    border-bottom: 2px solid #00A1DF;
+  }
+
+  .networkBanner.label {
+    margin: 0;
+    color: #FFF;
+    background-color: red;
+    width: 100%;
+    text-align: center;
+  }
+
+  .bottom {
+    -webkit-align-self: flex-end;
+    align-self: flex-end;
+    margin-top: -20px;
+  }
+
+  .grid.full-height {
+    min-height: 100%;
+  }
+
+  .inputIconBackground {
+    $text-input-md-highlight-color: color($colors-md, primary);
+  }
+}

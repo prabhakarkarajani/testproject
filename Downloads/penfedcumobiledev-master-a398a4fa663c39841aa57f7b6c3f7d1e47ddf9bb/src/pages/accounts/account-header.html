@@ -1,0 +1,137 @@
+<div *ngIf="headerParams.pageType; else Standard_Page_Header">
+  <ion-row class="pageHeader">
+    <ion-col col-2>
+      <ion-icon ios="ios-arrow-back" md="ios-arrow-back" item-left (click)="returnToAccounts()"></ion-icon>
+    </ion-col>
+    <ion-col col-10 class="accountName">
+      <span *ngIf="!headerParams.payload.nickname">{{headerParams.payload.fullName}}</span>
+      <span *ngIf="headerParams.payload.nickname">{{headerParams.payload.nickname}}</span>
+      <span>({{headerParams.payload.numLast4}})</span>
+      </ion-col>
+  </ion-row>
+  <!--IF LOAN, MORTGAGE, IRA or CERTIFICATE-->
+  <ion-row *ngIf="headerParams.payload.parentAcctType === 'LOAN' || headerParams.payload.parentAcctType === 'MORTGAGE' || headerParams.payload.parentAcctType === 'IRA' || headerParams.payload.parentAcctType === 'CERTIFICATE'" class="pageTitle" [ngClass]="{'account':headerParams.pageType}">
+    <ion-col col-12 text-center class="ion-title">
+      <div class="availableBalLabel"></div>
+      <div class="availableBal">
+        <div *ngIf="headerParams.payload.parentAcctType !== 'IRA' && headerParams.payload.parentAcctType !== 'CERTIFICATE'">Remaining Balance</div>
+        <div *ngIf="headerParams.payload.parentAcctType === 'IRA' || headerParams.payload.parentAcctType === 'CERTIFICATE'">Current Balance</div>
+        <div class="balance">{{ headerParams.payload.currentBal | formatPrice }} 
+        </div>
+      </div>
+    </ion-col>
+  </ion-row>
+  <!--ENDIF-->
+  <!--IF CHECKING_SAVINGS-->
+  <ion-row *ngIf="headerParams.payload.parentAcctType === 'CHECKING_SAVING'" class="pageTitle" [ngClass]="{'account':headerParams.pageType}">
+    <ion-col col-12 text-center class="ion-title">
+      <div class="availableBalLabel"></div>
+      <div class="availableBal">
+        <div>Available Balance</div>
+        <div class="balance">{{ headerParams.payload.availableBal | formatPrice }} 
+          <span *ngIf="showAccountDetails"><ion-icon ios="ios-remove-circle-outline" md="ios-remove-circle-outline" (click)="showAccountDetails = !showAccountDetails"></ion-icon></span>
+          <span *ngIf="!showAccountDetails"><ion-icon ios="ios-add-circle-outline" md="ios-add-circle-outline" (click)="showAccountDetails = !showAccountDetails"></ion-icon></span>
+        </div>
+      </div>
+    </ion-col>
+  </ion-row>
+  <!--ENDIF-->
+  <!--IF CREDITCARD-->
+  <ion-row *ngIf="headerParams.payload.parentAcctType === 'CREDITCARD'" class="pageTitle credit-card" [ngClass]="{'account':headerParams.pageType, 'active':showAccountDetails}">
+    <div class="accountIcon" text-right>
+      <span *ngIf="showAccountDetails"><ion-icon ios="ios-remove-circle-outline" md="ios-remove-circle-outline" (click)="showAccountDetails = !showAccountDetails"></ion-icon></span>
+      <span *ngIf="!showAccountDetails"><ion-icon ios="ios-add-circle-outline" md="ios-add-circle-outline" (click)="showAccountDetails = !showAccountDetails"></ion-icon></span>
+    </div>
+    <ion-col col-12 text-center class="ion-title">
+      <div class="availableBalLabel"></div>
+      <div class="availableBal">
+        <div>Current Balance</div>
+        <div class="balance">{{ headerParams.payload.currentBal | formatPrice }} 
+        </div>
+      </div>
+    </ion-col>
+    <div class="credit-card-background" [ngStyle]="{'background-image':'url(assets/powercash_trans.png)'}" [ngClass]="{'showAccountDetails':showAccountDetails}"></div>
+    <div class="credit-card-background full" [ngStyle]="{'background-image':'url(assets/powercash_fulldetail.png)'}" [ngClass]="{'showAccountDetails':showAccountDetails}"></div>
+  </ion-row>
+  <!--ENDIF-->
+  <!--ACCOUNT DETAILS-->
+  <ion-row [ngClass]="{'showAccountDetails':showAccountDetails , 'creditCardDetails':headerParams.payload.parentAcctType === 'CREDITCARD', 'loanDetails':headerParams.payload.parentAcctType === 'LOAN', 'mortgageDetails':headerParams.payload.parentAcctType === 'MORTGAGE', 'iraDetails':headerParams.payload.parentAcctType === 'IRA', 'certificateDetails':headerParams.payload.parentAcctType === 'CERTIFICATE'}" class="accountDetails">
+    <ion-col col-12>
+      <ul>
+        <div *ngIf="headerParams.payload.parentAcctType === 'CHECKING_SAVING'">
+          <li><span>Current Balance</span> <span class="balance">{{headerParams.payload.currentBal | formatPrice}}</span></li>
+          <li><span>Account Number</span> <span>{{headerParams.payload.accountNum | formatAccountNumber}}</span></li>
+          <li><span>Routing Number</span> <span>{{headerParams.payload.routingNumber}}</span></li>
+        </div>
+
+        <div *ngIf="headerParams.payload.parentAcctType === 'CREDITCARD'">
+          <li><span>Available Credit</span> <span class="balance">{{headerParams.payload.availableCredit | formatPrice}}</span></li>
+          <li><span>Minimum Payment Due</span> <span class="balance">{{headerParams.payload.minAmtDue | formatPrice}}</span></li>
+          <li><span>Due Date</span> <span>{{headerParams.payload.dueDate}}</span></li>
+          <li><span>Rewards Balance</span> <span>{{rewardBalance}} {{rewardBalanceLabel}}</span></li>
+        </div>
+
+        <div *ngIf="headerParams.payload.parentAcctType === 'LOAN'">
+          <li><span>Available Credit</span> <span class="balance">{{(headerParams.payload.availableCredit !== 'null' ? (headerParams.payload.availableCredit | formatPrice) : ("0" | formatPrice))}}</span></li>
+          <li><span>Minimum Payment Due</span> <span class="balance">{{(headerParams.payload.minAmtDue !== 'null' ? (headerParams.payload.minAmtDue | formatPrice) : ("0" | formatPrice))}}</span></li>
+          <li><span>Due Date</span> <span>{{headerParams.payload.dueDate}}</span></li>
+        </div>
+        
+        <div *ngIf="headerParams.payload.parentAcctType === 'MORTGAGE'">
+          <li><span>Payment Due</span> <span class="balance">{{(headerParams.payload.minAmtDue !== 'null' ? (headerParams.payload.minAmtDue | formatPrice) : ("0" | formatPrice))}}</span></li>
+          <li><span>Due Date</span> <span>{{headerParams.payload.dueDate}}</span></li>
+          <li><span>Monthly Payment Amount</span> <span class="balance">{{((headerParams.payload.monthlyPaymentAmt | formatPrice) || ("0" | formatPrice)) }}</span></li>
+          <li><span>Escrow Balance</span> <span class="balance">{{(mortgageData.escrowAmt || 'Unavailable') | formatPrice}}</span></li>
+          <li><span>Interest Rate</span> <span>{{headerParams.payload.interestRate}}%</span></li>
+        </div>
+
+        <div *ngIf="headerParams.payload.parentAcctType === 'IRA'">
+          <li><span>Term</span> <span>{{headerParams.payload.term}} months</span></li>
+          <li><span>Opening Balance</span> <span class="balance">{{headerParams.payload.initialDeposit | formatPrice}}</span></li>
+          <li><span>Date Established</span> <span>{{headerParams.payload.openDate}}</span></li>
+          <li><span>Dividend YTD</span> <span class="balance">{{headerParams.payload.dividendEarned | formatPrice}}</span></li>
+          <li><span>Dividend Rate</span> <span>{{headerParams.payload.dividendRate}}%</span></li>
+          <li><span>APY</span> <span>{{headerParams.payload.apy}}%</span></li>
+          <li><span>Maturity Date</span> <span>{{headerParams.payload.maturityDate}}</span></li>
+        </div>
+
+        <div *ngIf="headerParams.payload.parentAcctType === 'CERTIFICATE'">
+          <li><span>Term</span> <span>{{headerParams.payload.term}} months</span></li>
+          <li><span>Opening Balance</span> <span class="balance">{{headerParams.payload.initialDeposit | formatPrice}}</span></li>
+          <li><span>Date Established</span> <span>{{headerParams.payload.openDate}}</span></li>
+          <li><span>Dividend YTD</span> <span class="balance">{{headerParams.payload.dividendEarned | formatPrice}}</span></li>
+          <li><span>Dividend Rate</span> <span>{{headerParams.payload.dividendRate}}%</span></li>
+          <li><span>APY</span> <span>{{headerParams.payload.apy}}%</span></li>
+          <li><span>Maturity Date</span> <span>{{headerParams.payload.maturityDate}}</span></li>
+        </div>
+      </ul>
+
+    </ion-col>
+    <ion-col *ngIf="headerParams.payload.parentAcctType === 'CREDITCARD'" col-12 text-center class="manageCard">Manage Card <ion-icon ios="ios-settings-outline" md="ios-settings-outline"></ion-icon></ion-col>
+  </ion-row>
+  <!--END ACCOUNT DETAILS-->
+</div>
+<ng-template #Standard_Page_Header>
+  <!--IF NONE -->
+  <ion-row class="pageHeader contact-header" >
+    <ion-col col-2>
+      <button ion-button menuToggle id="account-menuToggle-button">
+        <ion-icon *ngIf="this.show" ios="ios-close" md="ios-close"></ion-icon>
+        <ion-icon *ngIf="!this.show" name="menu"></ion-icon>
+      </button>
+    </ion-col>
+    <ion-col col-8 text-center class="ion-title">
+        <ion-title><img class="logo-white" src="assets/White.svg" /></ion-title>
+    </ion-col>
+    <ion-col col-2>
+      <button ion-button id="account-mail-button">
+        <ion-icon ios="ios-mail" md="ios-mail" icon-right></ion-icon>
+      </button>
+    </ion-col>
+  </ion-row>
+  
+  <ion-row *ngIf="pageNameParam" class="pageTitle staticPageTitle">
+    <ion-col col-12 text-center class="ion-title">{{pageNameParam}}</ion-col>
+  </ion-row>
+  <!--ENDIF-->
+</ng-template>

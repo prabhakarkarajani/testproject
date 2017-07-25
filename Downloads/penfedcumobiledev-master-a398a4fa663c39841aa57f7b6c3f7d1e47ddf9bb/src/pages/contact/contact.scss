@@ -1,0 +1,208 @@
+page-contact {
+  ion-icon {
+    color: #FFFFFF;
+    font-size: 2.6rem;
+    font-weight: 400;
+    line-height: 2.3rem;
+    text-align: center;
+  }
+
+  .hours {
+    font-family: 'monserrat500',sans-serif !important;
+    font-size: 1.5rem !important;
+    color: #282828;
+  }
+
+  .common-h2 {
+    font-family: 'monserrat300',sans-serif !important;
+    font-size: 1.5rem !important;
+    color: #282828;
+  }
+
+  .content {
+    background-color: $pf-mobile-light-grey;
+  }
+
+  .contact-header {
+    font-family: 'monserrat600',sans-serif !important;
+    font-size: 1.4rem;
+    background-color: rgba(17,46,81,1);
+    height: 4.7rem;
+  }
+
+  #contact-title {
+    .toolbar-title {
+      text-align: left;
+      margin-left: -2rem;
+      font-size: 1.6rem;
+      letter-spacing: 1px;
+      font-weight: 600;
+      line-height: 3.85rem;
+      color: white;
+    }
+  }
+
+  .contact-header {
+    .contact-toolbar {
+      .toolbar-background {
+        background-color: $header-color;
+      }
+    }
+  }
+
+  #mail-icon {
+    margin-top: 0;
+  }
+
+  #clock-icon {
+    margin-top: -4.4rem;
+  }
+
+  #account-mail-button {
+    margin-top: 0;
+    float: right;
+    height: 3.5rem;
+    margin-right: 1.1rem;
+    background-color: rgba(17,46,81,1);
+  }
+
+  #account-menuToggle-button {
+    height: 1.6rem;
+    margin-left: 1.1rem;
+    margin-top: 1rem;
+
+    .button-inner {
+      color: $pf-mobile-white;
+    }
+  }
+
+  .item ion-icon[item-start] + .item-inner {
+    margin-left: 0.5rem;
+  }
+
+  .contact-info {
+    text-decoration: none;
+    color: $pf-mobile-legal-blue;
+    font-size: 1.2rem;
+    font-family: 'monserratRegular', sans-serif !important;
+  }
+
+  .toolbar-title {
+    color: $pf-mobile-white;
+  }
+
+  .clock-content {
+    .item-inner {
+      .input-wrapper {
+        border-bottom: none;
+      }
+    }
+  }
+
+  .input-wrapper {
+    border-bottom: 1px solid #E5E4E4;
+  }
+
+  .list-header.item {
+    border-bottom: 2px solid rgba(90, 96, 110, 1);
+    border-top: none;
+    background-color: #f4f4f4;
+    margin-bottom: 0;
+
+    .label {
+      margin-bottom: 0.1rem;
+      padding-top: 1rem;
+      font-family: 'monserrat600',sans-serif !important;
+      font-size: 1.4rem;
+      letter-spacing: 2px;
+    }
+  }
+
+  .item.item-block {
+    padding-left: 1.5rem;
+    font-size: 1.2rem;
+    color: $pf-mobile-dark;
+    background-color: #f4f4f4;
+  }
+
+  .agentButton {
+    font-family: "monserrat500",sans-serif !important;
+    letter-spacing: 1px;
+    height: 5rem;
+    font-size: 1.6rem;
+    background-color: #022A55;
+    border-radius: 4px;
+  }
+
+  .realityDesc {
+    color: #282828;
+    white-space: normal;
+    font-size: 1.5rem;
+    font-family: 'monserratRegular', sans-serif !important;
+
+    a {
+      text-decoration: none;
+    }
+  }
+
+  .icon.ion-clock-outline {
+    margin-top: 0;
+  }
+
+  .blueIcon {
+    color: rgba(26, 161, 218, 1);
+    margin-top: 0;
+  }
+
+  .time {
+    font-family: 'monserratRegular', sans-serif !important;
+    font-size: 1.5rem;
+    color: #282828;
+  }
+
+  .title {
+    white-space: nowrap;
+    color: $pf-mobile-white;
+    font-weight: bold;
+    line-height: 3.1rem;
+    font-size: 1.6rem;
+  }
+
+  .back-button {
+    color: $pf-mobile-white;
+  }
+  //delete border
+  .item.item-block .item-inner,
+  .list .item-block .item-inner {
+    border-bottom: none;
+  }
+
+  .about-penfed-field,
+  .find-agent-field {
+    &.item.item-block {
+      & > .item-inner {
+        & > .input-wrapper {
+          border-bottom: none;
+          background-color: #f4f4f4;
+          font-size: 1.5rem;
+        }
+      }
+    }
+  }
+
+  .contact-footer {
+    font-family: 'monserratRegular', sans-serif !important;
+    color: $pf-mobile-legal-blue;
+    font-size: 1.2rem;
+    padding-left: 1.1rem;
+
+    p {
+      text-decoration: underline;
+    }
+  }
+
+  .list > .item-block:last-child,
+  .list > .item-wrapper:last-child .item-block {
+    border-bottom: none;
+  }
+}

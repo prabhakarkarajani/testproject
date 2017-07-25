@@ -1,0 +1,106 @@
+page-account-showhide {
+    .scroll-content {
+        background: #f4f4f4 !important;
+        padding: 0 !important;
+        p {
+            padding-left: 16px;
+            font-size: 13px;
+             color:  #59606e;
+        }
+    }
+    font-family: Montserrat;
+    ion-header {
+        .toolbar-background-md {
+            background-color: $header-color;
+        }
+        ion-navbar {
+            
+            ion-buttons button ion-icon.closeIcon {
+                color:#FFF !important;
+                font-weight: 600;
+                font-size: 20px;
+                 padding-left: 7px;
+            }
+            ion-title {
+                .toolbar-title-md {
+                    color:#FFF;
+                    font-weight: 500;
+                    line-height: 31px;
+                    font-size: 14px;
+                    padding-left: 10px;
+                    letter-spacing: 0.2rem;
+                }
+            }
+        }
+    }
+    .label-ios {
+        margin: 11px 8px 11px 0;
+        font-size: small;
+    }
+    .label-md {
+        margin: 13px 8px 13px 0;
+        letter-spacing: 0.2rem;
+    }
+   .item-md-light, .item-divider-md-light {
+        color:  #59606e;
+        background-color: #f4f4f4;
+        font-weight: 600 !important;
+        letter-spacing: 0.4rem !important;
+        border-bottom: 2px solid #59606e;
+        .label {
+                font-size: 14px;
+                margin-bottom: 2px;
+        }
+    }
+    .item-md {
+        padding-left: 0 !important;
+        ion-label {
+            padding-left: 16px !important;
+            font-size: 13px;
+            color:  #59606e;
+        }
+    }
+   .submitBtn {
+        text-align: center;
+        margin-top: 185px;
+        margin-bottom: 40px;
+        button {
+            width: 70%;
+            padding: 25px;
+            background: #0f2d52;
+            font-size: 14px;
+            font-weight: 400;
+            letter-spacing: 0.2rem;
+            border-radius: 4px !important;
+        }
+    }
+    .select-md {
+        background: #FFFFFF;
+    }
+}
+
+.myPopup .alert-wrapper  {
+        border-radius:13px !important;
+        width: 95px;
+} 
+
+.myPopup .alert-title {
+        text-align:center;
+        font-weight: 500;
+        font-size: 14px;
+}
+
+  .myPopup .alert-sub-title {
+        text-align:center;
+        font-weight: 400;
+        font-size: 12px;
+}
+
+  .myPopup .alert-button-group {
+        border-top: 1px solid grey;
+}
+
+.myPopup .button-inner {
+        font-size: 18px;
+        padding: 0px 102px;
+}

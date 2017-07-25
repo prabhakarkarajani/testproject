@@ -1,0 +1,65 @@
+<!--
+  Generated template for the UpdatePhoneNumPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+
+<ion-content no-padding>
+  <ion-grid no-padding>
+    <ion-row class="phone-header">
+      <ion-col col-1>
+        <button (click)="popView()" class="backButton">
+          <ion-icon ios="ios-close" md="ios-close"></ion-icon>
+        </button>
+      </ion-col>
+      <ion-col col-11>
+        <ion-title id="contact-information-title" text-left>UPDATE PHONE NUMBERS</ion-title>
+      </ion-col>
+    </ion-row>
+    <form #signupForm="ngForm">
+      <ion-row class="label-row">
+        <ion-col>
+          <ion-list no-lines>
+            <ion-item no-padding class="phoneNumber-item">
+              <ion-label color="main-text-color" stacked>DAYTIME PHONE NUMBER</ion-label>
+              <ion-input type="number" [(ngModel)]="dayTimePhoneNumber" name="dayTimePhoneNumber" placeholder="{{dayTimePhoneNumber}}" clearInput="true"></ion-input>
+            </ion-item>
+          </ion-list>
+        </ion-col>
+      </ion-row>
+      <ion-row class="label-row">
+        <ion-col>
+          <ion-list no-lines>
+            <ion-item no-padding class="phoneNumber-item">
+              <ion-label color="main-text-color" stacked>EVENING PHONE NUMBER</ion-label>
+              <ion-input type="number" [(ngModel)]="eveningNumber" name="eveningNumber" placeholder="{{eveningNumber}}" clearInput="true"></ion-input>
+            </ion-item>
+          </ion-list>
+        </ion-col>
+      </ion-row>
+
+      <ion-row class="label-row">
+        <ion-col>
+          <ion-list no-lines>
+            <ion-item no-padding class="phoneNumber-item">
+              <ion-label color="main-text-color" stacked>CELL PHONE NUMBER</ion-label>
+              <ion-input type="number" [(ngModel)]="cellNumber" name="cellNumber" placeholder="{{cellNumber}}" clearInput="true" (blur)="onBlurMethod()"></ion-input>
+            </ion-item>
+          </ion-list>
+        </ion-col>
+      </ion-row>
+
+      <ion-row class="phone-number-update-button">
+        <ion-col col-1></ion-col>
+        <ion-col col-10>
+          <div>
+            <button class="update-button" color="main-text-color" type="submit" ion-button block (click)="goContactInfoPage()">UPDATE PHONE NUMBERS</button>
+          </div>
+        </ion-col>
+        <ion-col col-1></ion-col>
+      </ion-row>
+    </form>
+  </ion-grid>
+</ion-content>

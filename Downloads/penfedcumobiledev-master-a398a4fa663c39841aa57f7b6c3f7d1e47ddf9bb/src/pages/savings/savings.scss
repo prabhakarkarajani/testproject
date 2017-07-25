@@ -1,0 +1,41 @@
+page-savings {
+            .scroll-content{
+background: #f4f4f4;
+ font-family: Montserrat;
+ padding: 16px 13px!important;
+    }
+       /* product header styles */
+ion-header {
+        .toolbar-background-md {
+            background-color: $header-color;
+            letter-spacing: 0.2rem;
+        }
+            ion-title {
+                .toolbar-title-md {
+                    color: #FFFFFF;
+                    font-weight: 600;
+                    font-size: 16px;
+                    letter-spacing: 2px;
+                    padding-left: 0!important;
+                    line-height: 28px;
+                }
+            }
+            ion-icon{
+                font-size: 28px;
+color: #FFFFFF;
+letter-spacing: 0;
+            }
+        }
+           /* product footer styles*/
+.productFooter{
+
+    .btnContainer button{
+       padding:0 18px 0 0;
+        font-size: 14px;
+color: #2BA1E1;
+letter-spacing: 0;
+line-height: 17px;
+    }
+ 
+}
+}

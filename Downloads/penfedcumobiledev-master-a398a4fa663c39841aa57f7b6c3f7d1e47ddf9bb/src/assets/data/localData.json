@@ -1,0 +1,55 @@
+{
+    "baseUrl": "assets/data/",
+    "imgUrl": "assets/img/",
+    "login": {
+        "loginUrl": "https://mobile-qa.penfed.org/webapp/j_security_check",
+        "validateSecurityCodeUrl": "public/login/validateSecurityCode",
+        "changePasswordUrl": "/public/login/changePassword",
+        "loginFailedAttemptUrl": "/public/login/quickLoginFailedAttempt",
+        "loginDisableUrl": "/public/login/quickLoginDisable",
+        "accountUnlockUrl": "/public/login/accountUnlock",
+        "greetingInfoUrl": "/public/login/greetingInfo",
+        "logoutUrl": "https://mobile-qa.penfed.org/webapp/j_security_check"
+    },
+    "accounts": {
+        "accountslsUrl": "accountsData.json",
+        "IRAAccountsUrl": "iraAccounts.json",
+        "transactionsUrl": "private/accounts/transactions",
+        "updateShowHideAccountsUrl": "private/settings/hideaccounts",
+        "paymentHistoryUrl": "private/accounts/getPaymentHistory",
+        "externalAccountUrl": "/private/external/verifyExternalAccount",
+        "actStatementUrl": "/private/accounts/statement"
+    },
+    "transfer": {
+        "transferUrl": "private/transfer",
+        "scheduledTransferUrl": "private/transfer/getScheduledTransfers",
+        "balanceTransferUrl": "private/balanceTransfer/getRateInfo",
+        "balanceTransferSubmitUrl": "private/balanceTransfer/submitBalanceTransfer",
+        "payoffAmountUrl": "/private/transfer/getPayoffAmount"
+    },
+    "creditCard": {
+        "rateInfoUrl": "/private/balanceTransfer/getRateInfo",
+        "penfedCardPatternsUrl": "/private/balanceTransfer/getPenfedCardPatterns",
+        "merchantsUrl": "/private/balanceTransfer/getMerchants",
+        "creditCardTransactionsUrl": "/private/accounts/getCreditCardTransactions"
+    },
+    "deposit": {
+        "depositUrl": "/private/deposit",
+        "checkImageUrl": "/private/check/getCheckImage"
+    },
+    "product": {
+        "productUrl": "products.json",
+        "categoryUrl": "product-category.json",
+        "exploreUrl": "product-explore.json"
+    },
+    "contact": {
+        "getMailingAddressUrl": "mailingAddress.json",
+        "updateMailingAddressUrl": "private/settings/mailingaddr",
+        "updateContactPhoneUrl": "private/settings/contactphone",
+        "updateContactEmailUrl": "private/settings/contactemail",
+        "contactInfoUrl": "private/settings/contactinfo",
+        "updateAccountNickNameUrl": "private/settings/accountnicknames",
+        "countriesUrl": "countries.json",
+        "statesUrl": "usStates.json"
+    }
+}

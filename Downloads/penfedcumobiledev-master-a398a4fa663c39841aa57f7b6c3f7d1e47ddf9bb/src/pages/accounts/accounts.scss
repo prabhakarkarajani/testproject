@@ -1,0 +1,65 @@
+page-accounts {
+  .content{
+    background-color: $pf-mobile-light-grey;
+  }
+  .fixed-content{
+     @media(min-width: 600px) and (max-width: 1100px) {
+        background: linear-gradient(180deg, #0F2D52 0%, #0F2D52 10%, #2AA1E1 100%);
+      }
+  }
+  $grid-padding-width: 5px;
+  font-family: 'Montserrat', sans-serif !important;
+  ion-list{
+      & > .item{
+          padding-left: 0px;
+          .label{
+            margin:0px;
+            padding:0;
+          }
+          &:last-child{
+            border-bottom:0px;
+          }
+      }
+  }
+  .list {
+      margin: -1px 0 0 0;
+  }
+  .list-ios > .item-block:last-child, .list-ios > .item-wrapper:last-child .item-block{
+    border-bottom:0px;
+  }
+  
+  .icon.icon-md.ion-ios-menu-outline {
+      margin: 3px 0px 0px 25px;
+  }
+  .ion-title {
+      font-size: 17px;
+  }
+  .item-divider-ios{
+    padding:0 16px;
+  }
+  .item-ios.item-block .item-inner{
+    padding: 0px;
+  }
+  .item-ios ion-icon[item-left], .item-ios ion-icon[item-right], .item-ios ion-icon[item-start], .item-ios ion-icon[item-end]{
+      margin: 0px;
+      float: right;
+      font-size: 24px;
+      color:$pf-mobile-light-blue-alt;
+  }
+  .accountsText{
+    padding: 0 16px;
+    font-family: 'monserratRegular', sans-serif;
+    font-size: 14px;
+    color: $pf-mobile-mid-grey;
+  }  
+}
+//shared styles
+.buttonCTA{
+  background-color:$pf-mobile-dark;
+  font-family: 'monserrat500', sans-serif;
+  margin:20px 0;
+  padding: 0 1em;
+  height: 2.8em;
+  border-radius: 4px;
+  font-size: 1.6rem;
+}

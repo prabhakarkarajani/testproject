@@ -1,0 +1,10 @@
+<ion-list>
+  <ion-item-divider class="dividerHeading"> 
+    <div class="headingTitle">Recent Transactions</div>
+    <div class="asOfDate" float-right><span>As of</span> {{accountDetails.asOfDate || "...Loading"}}</div>
+  </ion-item-divider>
+  <ion-item *ngFor="let transaction of recentTransactions">
+    <div class="recentDate"><span>{{transaction.transactionDate}}</span><span *ngIf="transaction.pending">PENDING</span></div>
+    <div class="recentTransaction"><span>{{transaction.displayName}}</span><span>{{transaction.amount | formatPrice}}</span></div>
+  </ion-item>
+</ion-list>

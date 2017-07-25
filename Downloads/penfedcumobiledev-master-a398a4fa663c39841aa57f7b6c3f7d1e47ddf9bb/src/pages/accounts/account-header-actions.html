@@ -1,0 +1,40 @@
+<ion-grid>
+  <ion-row *ngIf="actionsParams.payload.parentAcctType === 'CHECKING_SAVING'">
+    <ion-col col-4 text-center>
+      <div class="buttonWrap">
+        <button>
+          <img src="assets/transfer-arrow-icon.svg" alt="PenFed">
+          <p class="transfer">Transfer Funds</p>
+        </button>
+      </div>
+    </ion-col>
+    <ion-col col-4 text-center>
+      <div class="buttonWrap">
+        <button>
+          <img src="assets/piggy-bank-icon.svg" alt="PenFed">
+          <p class="mobile-deposit">Mobile Deposit</p>
+        </button>
+      </div>
+    </ion-col>
+    <ion-col col-4 text-center>
+      <div class="buttonWrap">
+        <button>
+          <img src="assets/payment-icon.svg" alt="PenFed">
+          <p class="payment">Make Payment</p>
+        </button>
+      </div>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col col-12 class="accountsText">
+      <p>Balances may reflect transactions that have not yet posted to your account</p>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col col-12>
+      <div text-center>
+        <button ion-button class="buttonCTA" text-center>MAKE PAYMENT</button>
+      </div>
+    </ion-col>
+  </ion-row>
+</ion-grid>

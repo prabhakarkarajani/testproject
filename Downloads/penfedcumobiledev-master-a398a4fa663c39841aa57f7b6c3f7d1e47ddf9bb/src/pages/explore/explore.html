@@ -1,0 +1,89 @@
+<!--
+  Generated template for the ExplorePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar>
+        <ion-grid>
+            <ion-row>
+                <ion-col col-1>
+                    <ion-icon name="menu" lass="toggle" menuToggle></ion-icon>
+                </ion-col>
+                <ion-col col-10>
+                    <ion-title text-uppercase>products</ion-title>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+
+    </ion-navbar>
+</ion-header>
+
+<ion-grid>
+    <ion-row>
+        <ion-col class="ion-title col" col-12="" text-center="">
+
+        </ion-col>
+    </ion-row>
+</ion-grid>
+
+<ion-content>
+
+    <ion-segment [(ngModel)]="productsTabs">
+        <ion-segment-button value="currentRates">
+            Current Rates & Offers
+        </ion-segment-button>
+        <ion-segment-button value="expolre">
+            EXPLORE
+        </ion-segment-button>
+    </ion-segment>
+
+    <div [ngSwitch]="productsTabs">
+        <ion-list *ngSwitchCase="'currentRates'">
+            Page UnderConstruction
+
+        </ion-list>
+        <ion-list *ngSwitchCase="'expolre'">
+
+            <div *ngFor="let i of productCategory">
+                <ion-item-divider class="dividerHeading">
+                    <div class="headingTitle"> {{i.name}}
+                        <!--{{checkSaveAccounts.name}}-->
+                    </div>
+
+                </ion-item-divider>
+
+                <!-- *ngFor="let item of productExplore | category:{categoryId:i.id}" -->
+                <!--<ion-item *ngFor="let checkSaveAccounts of checkSaveAccounts">  | filter:{categoryId:i.id}-->
+                <ion-item *ngFor="let i of productExpolre | filter:{categoryId:i.id}">
+                    <ion-grid>
+                        <ion-row>
+                            <!--{{(typeof account.nickname)}}-->
+
+                            <ion-col text-left col-2>
+                                <img src="{{iconUrl}}{{i.icon}}" alt="i.icon">
+                            </ion-col>
+                            <ion-col col-8>
+                                <!-- <h4> CHECKING</h4>
+                                <p> The simplicty you need. {{i.categoryId}}</p>
+                                <p>The benefits you want.</p>-->
+
+                                <h4 text-uppercase> {{i.name}}</h4>
+                                <p> {{i.descText1}}</p>
+                                <p>{{i.descText2}}</p>
+                            </ion-col>
+                            <!--<span>({{checkSaveAccounts.name}})</span>-->
+                            <ion-col col-2>
+                                <ion-icon name="arrow-forward" (click)="goToPage(i.name)"></ion-icon>
+                            </ion-col>
+
+                        </ion-row>
+                    </ion-grid>
+
+                </ion-item>
+            </div>
+        </ion-list>
+    </div>
+</ion-content>

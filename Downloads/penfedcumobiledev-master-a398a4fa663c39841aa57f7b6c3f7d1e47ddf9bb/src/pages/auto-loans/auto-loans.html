@@ -1,0 +1,48 @@
+<!--
+  Generated template for the AutoLoansPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+   
+  <ion-grid>
+  <ion-row>
+    <ion-col col-1 ><ion-icon name="menu" lass="toggle" menuToggle></ion-icon></ion-col>
+    <ion-col col-10><ion-title text-uppercase>AUTO LOANS</ion-title></ion-col>
+     <ion-col col-1><ion-icon ios="ios-share" md="md-share"></ion-icon></ion-col>
+  </ion-row>
+ 
+</ion-grid>
+  </ion-navbar>
+ 
+
+
+</ion-header>
+
+
+<ion-content padding>
+
+
+  <div *ngIf="autoLoansProduct?.length >2">
+ <proudctcarousel [item]="autoLoansProduct" > </proudctcarousel>
+ </div>
+<div *ngIf="autoLoansProduct?.length <3">
+ <product-base [item]="item" *ngFor="let item of autoLoansProduct"  ></product-base>
+</div>
+
+
+<div class="productFooter">
+         <div class="btnContainer"><button ion-button color="light" clear>CONTACT US</button>
+   <button ion-button color="light" clear>LOCATIONS</button>
+   </div>
+        <ul> <li><p>Rates and offers current as of June 1, 2017 and are subject to change.<p>
+
+        <p>Annual Percentage Rate. Your actual APR will be determined at the time of disbursement and will be based on your application and credit information. Rates quoted assume excellent borrower credit history. Not all applicants will qualify for the lowest rate. The rate you receive on your loan will be the rate in effect at the time of loan disbursal.</p>
+        </li></ul>
+   
+</div>
+
+</ion-content>

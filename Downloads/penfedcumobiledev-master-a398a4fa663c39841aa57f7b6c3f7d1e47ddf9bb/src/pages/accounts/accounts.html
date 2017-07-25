@@ -1,0 +1,22 @@
+<ion-content id="ionContent">
+    <ion-grid no-padding>
+        <account-header [pageNameParam]="'ACCOUNTS'"></account-header>
+    </ion-grid>
+    <account-list-item [accountType]="checkSaveAccounts" [accountTypeLabel]="'CHECKING &amp; SAVINGS'" [accountAsOfDate]="checkSaveAccountsAsOfDate" class="list-item">Loading...</account-list-item>
+    <account-list-item [accountType]="reditCardAccounts" [accountTypeLabel]="'CREDIT CARDS'" [accountAsOfDate]="reditCardAccountsAsOfDate" class="list-item">Loading...</account-list-item>
+    <account-list-item [accountType]="loanAccounts" [accountTypeLabel]="'LOANS'" [accountAsOfDate]="loanAccountsAsOfDate" class="list-item">Loading...</account-list-item>
+    <account-list-item [accountType]="mortgageAccounts" [accountTypeLabel]="'MORTGAGES'" [accountAsOfDate]="mortgageAccountsAsOfDate" class="list-item">Loading...</account-list-item>
+    <account-list-item [accountType]="iraAccounts" [accountTypeLabel]="'IRA'" [accountAsOfDate]="iraAccountsAsOfDate" class="list-item"></account-list-item>
+    <account-list-item [accountType]="certificateAccounts" [accountTypeLabel]="'Certificate'" [accountAsOfDate]="certificateAccountsAsOfDate" class="list-item"></account-list-item>
+    <ion-grid>
+      <ion-row>
+        <ion-col col-12 class="accountsText">
+          <p>Balances may reflect transactions that have not yet posted to your account</p>
+          <div text-center>
+            <button ion-button class="buttonCTA accountShowHide" text-center (click)="goToAccountShowhide()">ACCOUNT SHOW/HIDE</button>
+          </div>
+        </ion-col>
+      </ion-row>
+      <accounts-footer></accounts-footer>
+    </ion-grid>
+</ion-content>

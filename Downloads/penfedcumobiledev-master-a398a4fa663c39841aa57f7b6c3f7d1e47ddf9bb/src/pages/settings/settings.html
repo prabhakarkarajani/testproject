@@ -1,0 +1,90 @@
+<!--
+  Generated template for the SettingsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-content>
+  <ion-grid no-padding>
+    <account-header></account-header>
+  </ion-grid>
+  <ion-list>
+    <div>
+      <ion-item-divider class="dividerHeading">
+        <div class="headingTitle">Security</div>
+      </ion-item-divider>
+      <ion-item class="list-item">
+        <ion-label class="item-name">Stay Logged In<ion-icon ios="ios-help" md="ios-help"></ion-icon>
+        </ion-label>
+        <ion-toggle class="toggle-md" [(ngModel)]="stayLoggedIn"></ion-toggle>
+      </ion-item>
+      <ion-item class="list-item">
+        <ion-label class="item-name">Touch ID
+        </ion-label>
+        <ion-toggle class="toggle-md" [(ngModel)]="enableTouchID"></ion-toggle>
+      </ion-item>
+      <button ion-item class="list-item">
+        <div class="item-group">
+          <div class="item-name">Pattern Login</div>
+          <ion-icon text-right ios="ios-arrow-forward" md="ios-arrow-forward"></ion-icon>
+        </div>
+      </button>
+    </div>
+    <div>
+      <ion-item-divider class="dividerHeading">
+        <div class="headingTitle">Accounts</div>
+      </ion-item-divider>
+    <button ion-item class="list-item" (click)="goToAccountShowhide()">
+        <div class="item-group" >
+          <div class="item-name"  >Account Show/Hide</div>
+          <ion-icon text-right ios="ios-arrow-forward" md="ios-arrow-forward"></ion-icon>
+        </div>
+      </button>
+      <button ion-item class="list-item">
+        <div class="item-group">
+          <div class="item-name">Account Nicknames</div>
+          <ion-icon text-right ios="ios-arrow-forward" md="ios-arrow-forward"></ion-icon>
+        </div>
+      </button>
+      <button ion-item class="list-item">
+        <div class="item-group">
+          <div class="item-name">Manage Your Cards</div>
+          <ion-icon text-right ios="ios-arrow-forward" md="ios-arrow-forward"></ion-icon>
+        </div>
+      </button>
+    </div>
+     <div>
+      <ion-item-divider class="dividerHeading">
+        <div class="headingTitle">Member Profile</div>
+      </ion-item-divider>
+      <button ion-item class="list-item" (click)="goToContactInfoPage()">
+        <div class="item-group">
+          <div class="item-name">Contact Information</div>
+          <ion-icon text-right ios="ios-arrow-forward" md="ios-arrow-forward"></ion-icon>
+        </div>
+      </button>
+      <button ion-item class="list-item" (click)="goToChangePasswordPage()">
+        <div class="item-group">
+          <div class="item-name">Change Your Password</div>
+          <ion-icon text-right ios="ios-arrow-forward" md="ios-arrow-forward"></ion-icon>
+        </div>
+      </button>
+      <button ion-item class="list-item">
+        <div class="item-group">
+          <div class="item-name">Notifications<ion-icon ios="ios-help" md="ios-help"></ion-icon></div>
+          <ion-icon text-right ios="ios-arrow-forward" md="ios-arrow-forward"></ion-icon>
+        </div>
+      </button>
+    </div>
+
+    <ion-item-divider class="dividerHeading">
+      <div class="headingTitle">Version</div>
+    </ion-item-divider>
+    <ion-item class="list-item">
+        <div class="item-group">
+          <div class="item-name">2.7 Build 6181</div>
+        </div>
+      </ion-item>
+  </ion-list>
+
+</ion-content>

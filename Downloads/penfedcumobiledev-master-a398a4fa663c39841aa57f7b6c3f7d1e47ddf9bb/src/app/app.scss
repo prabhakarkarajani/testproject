@@ -1,0 +1,132 @@
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+@import url( 'https://fonts.googleapis.com/css?family=Montserrat');
+
+#gradientBackground {
+  background: linear-gradient(180deg, $header-color 0%, #008FC6 100%);
+}
+// search icon
+.search {
+  height: 24px;
+
+  .icon-search.icon {
+    &.icon.ion-md-search,
+    &.ion-ios-search-outline {
+      color: $pf-mobile-white;
+      padding-left: 18px;
+      font-size: 24px;
+    }
+  }
+}
+// each list bar
+.app-menu-item {
+  color: $pf-mobile-white;
+  font-size: 16px;
+  font-family: 'monserratRegular', sans-serif !important;
+  background: transparent;
+  border-bottom: 0.01em solid #10375B;
+  height: 55px;
+
+  .item-inner {
+    border-bottom: none;
+  }
+}
+
+.menu-list:last-child {
+  border-bottom: none;
+}
+//list icon
+.list-icon {
+  padding: 18px 0 0 22px;
+}
+//list title
+.list-content {
+  margin-left: 22px;
+}
+
+#account-menuToggle-button {
+  background-color: $header-color;
+  height: 1.8em;
+  border-radius: 0;
+  font-size:28px;
+  padding:0;
+  .button-inner {
+    color: $pf-mobile-white;
+  }
+}
+#account-mail-button{
+  background-color: transparent;
+  font-size:28px;
+  padding:0;
+}
+
+.submenu {
+  font-family: 'monserratRegular', sans-serif !important;
+  font-size: 16px;
+  color: $pf-mobile-white;
+  border-bottom: 1px solid #10375B;
+
+  &.menu-active {
+    background-color: $pf-mobile-white;
+    color: #0E2C52;
+    font-weight: bold;
+  }
+}
+
+.sidenav {
+  background-color: $pf-mobile-white;
+  margin: 0;
+  list-style-type: none;
+  padding: 0;
+
+  .submenu-item {
+    .item-block .item-inner,
+    .item-block .item-inner {
+      border-bottom: none;
+    }
+  }
+}
+
+.sublist {
+  display: inline-block;
+  height: 55px;
+}
+
+.submenu-item {
+  height: 45px;
+  font-size: 13px;
+  font-weight: 500;
+  padding-left: 64px;
+  padding-top: 13px;
+  color: rgba(26, 161, 218, 1);
+  background-color: $pf-mobile-white;
+  animation-duration: 4s;
+}
+
+.menu-header {
+  .menu-toolbar {
+    min-height: 47px;
+
+    .toolbar-background {
+      background-color: $header-color;
+      border-bottom: 1px solid #34A2DE;
+    }
+  }
+}
+//hide the last child border
+.last-item {
+  .app-menu-item {
+    border-bottom: none;
+  }
+}
